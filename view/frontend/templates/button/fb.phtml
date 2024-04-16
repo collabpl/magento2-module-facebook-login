@@ -1,0 +1,47 @@
+<?php
+/**
+ * @category  Collab
+ * @package   Collab\FacebookLogin
+ * @author    Marcin Jędrzejewski <m.jedrzejewski@collab.pl>
+ * @copyright 2024 Collab
+ * @license   MIT
+ */
+
+declare(strict_types=1);
+
+use Collab\FacebookLogin\ViewModel\FacebookLoginConfig;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Layout\Element;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
+
+/** @var Element $block */
+/** @var Escaper $escaper */
+/** @var SecureHtmlRenderer $secureRenderer */
+/** @var FacebookLoginConfig $viewModel */
+$viewModel = $block->getFbLoginConfig();
+$clientId = $viewModel->getClientId();
+$formKey = $viewModel->getFormKey();
+$baseGraphUrl = $viewModel->getBaseGraphUrl();
+$callbackUrl = $viewModel->getCallbackUrl();
+?>
+<div id="fb-login">
+    <img src="<?= $escaper->escapeUrl($this->getViewFileUrl('Collab_FacebookLogin::images/fb-button.svg')); ?>"
+         alt="<?= /** noEscape */ __('Facebook Login') ?>" />
+</div>
+<?php
+$scriptString = <<<script
+    const loginButton = document.getElementById('fb-login');
+    const params = new URLSearchParams({
+        client_id: "{$clientId}",
+        redirect_uri: "{$callbackUrl}",
+        scope: "email",
+        state: "{$formKey}"
+    });
+
+    loginButton.addEventListener('click', function() {
+        window.location = 'https://www.facebook.com/v19.0/dialog/oauth?' + params.toString();
+    });
+script;
+?>
+
+<?= /** @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>

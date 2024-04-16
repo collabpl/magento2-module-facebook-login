@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Collab FacebookLogin for Magento
+ *
+ * @author      Marcin Jędrzejewski <m.jedrzejewski@collab.pl>
+ * @copyright   Copyright 2024 Collab
+ * @license     Open Source License (OSL v3)
+ */
+-->
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="connect-src">
+            <values>
+                <value id="facebook" type="host">https://www.facebook.com</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="facebook" type="host">https://www.facebook.com</value>
+            </values>
+        </policy>
+        <policy id="frame-src">
+            <values>
+                <value id="facebook" type="host">https://www.facebook.com</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

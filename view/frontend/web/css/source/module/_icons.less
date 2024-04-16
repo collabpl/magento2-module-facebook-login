@@ -1,0 +1,28 @@
+// /**
+//  * @category  Collab
+//  * @package   Collab\FacebookLogin
+//  * @author    Marcin Jędrzejewski <m.jedrzejewski@collab.pl>
+//  * @copyright 2024 Collab
+//  * @license   MIT
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+@fb-login-logo-width: 40px;
+@fb-login-logo-height: 40px;
+
+
+//
+//  Common
+//  _____________________________________________
+& when (@media-common = true) {
+    #fb-login {
+        cursor: pointer;
+
+        img {
+            width: @fb-login-logo-width;
+            height: @fb-login-logo-height;
+        }
+    }
+}

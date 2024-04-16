@@ -1,0 +1,34 @@
+{
+    "name": "collab/module-facebook-login",
+    "version": "1.0.0",
+    "description": "Magento 2 module which provides ability to login using Facebook",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Marcin Jędrzejewski",
+            "email": "m.jedrzejewski@collab.pl"
+        }
+    ],
+    "homepage": "https://github.com/collabpl/magento2-module-facebook-login",
+    "keywords": [
+        "magento",
+        "magento2",
+        "facebook login",
+        "social login button"
+    ],
+    "require": {
+        "magento/framework": "^103.0",
+        "collab/module-customer-passwordless-login": "1.0.*"
+    },
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Collab\\FacebookLogin\\": ""
+        }
+    }
+}
