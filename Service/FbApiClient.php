@@ -24,6 +24,7 @@ class FbApiClient
     }
 
     /**
+     *
      * @throws Exception
      */
     public function getUserInfo(string $code): array
@@ -33,6 +34,7 @@ class FbApiClient
     }
 
     /**
+     *
      * @throws Exception
      */
     private function getAccessToken(string $code): string

@@ -25,7 +25,7 @@ $baseGraphUrl = $viewModel->getBaseGraphUrl();
 $callbackUrl = $viewModel->getCallbackUrl();
 ?>
 <div id="fb-login">
-    <img src="<?= $escaper->escapeUrl($this->getViewFileUrl('Collab_FacebookLogin::images/fb-button.svg')); ?>"
+    <img src="<?= $escaper->escapeUrl($block->getViewFileUrl('Collab_FacebookLogin::images/fb-button.svg')); ?>"
          alt="<?= /** noEscape */ __('Facebook Login') ?>" />
 </div>
 <?php

@@ -61,6 +61,7 @@ class Config extends DataObject implements ConfigInterface
     }
 
     /**
+     *
      * @throws NoSuchEntityException
      */
     public function getCallbackUrl(): string
@@ -74,6 +75,7 @@ class Config extends DataObject implements ConfigInterface
     }
 
     /**
+     *
      * @throws LocalizedException
      */
     public function getFormKey(): string

@@ -36,6 +36,7 @@ class Index implements HttpGetActionInterface
     }
 
     /**
+     *
      * @throws Exception
      */
     public function execute(): ResultInterface
